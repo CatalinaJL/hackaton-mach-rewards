@@ -11,6 +11,7 @@ import ProgressBar from "react-customizable-progressbar";
 import imgBoton from "../../../img/Historial_icono.png";
 import logoColores from "../../../img/pointsIcon.svg";
 import CountUp from "react-countup";
+import VisibilitySensor from 'react-visibility-sensor';
 
 const UserProfile = () => {
   const [user]= useContext(ContextUser);
@@ -38,7 +39,7 @@ const UserProfile = () => {
             <ProgressBar
             className="progressBar"
             strokeColor="#EE9B00"
-            progress={40}
+            progress={1}
             radius={60}
             strokeWidth={10}
             trackStrokeWidth={10}
@@ -48,7 +49,6 @@ const UserProfile = () => {
             steps={100}
           > 
           <div className="indicator">
-            
             <p className="pointsProgressBar"> <img src={logoColores} alt=""/> {data[user].puntos} </p>
             <p>Puntos</p>
           </div>
@@ -98,6 +98,7 @@ const UserProfile = () => {
                     ref={countUpRef}
                   />
                 </div>
+                
               )}
             </CountUp>
             <span className="textBenefitsProfile">
